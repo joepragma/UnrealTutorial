@@ -7,6 +7,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b3bea900-973a-4fe4-8aee-9a3fd830c416" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.unrealtutorial.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.unrealtutorial.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnrealTutorial.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/UnrealTutorial.uproject" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +119,7 @@
       <workItem from="1668810268566" duration="885000" />
       <workItem from="1668811171327" duration="28000" />
       <workItem from="1668811221933" duration="111000" />
-      <workItem from="1668811352276" duration="310000" />
+      <workItem from="1668811352276" duration="1147000" />
     </task>
     <servers />
   </component>
