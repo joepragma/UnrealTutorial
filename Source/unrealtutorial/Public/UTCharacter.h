@@ -37,4 +37,5 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	void MoveForward(float Value);
+	void MoveRight(float Value);
 };
