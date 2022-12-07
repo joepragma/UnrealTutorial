@@ -46,6 +46,8 @@ void AUTCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 	PlayerInputComponent->BindAxis("MoveRight", this, &AUTCharacter::MoveRight);
 	PlayerInputComponent->BindAxis("Turn", this, &APawn::AddControllerYawInput);
 	PlayerInputComponent->BindAxis("LookUp", this, &APawn::AddControllerPitchInput);
+
+	PlayerInputComponent->BindAction("MagicAttack", IE_Pressed, this, &AUTCharacter::MagicAttack);
 }
 
 void AUTCharacter::MoveForward(float Value)
@@ -65,4 +67,15 @@ void AUTCharacter::MoveRight(float Value)
 
 	const FVector RightVector = FRotationMatrix(CameraRotator).GetScaledAxis(EAxis::Y);
 	AddMovementInput(RightVector, Value);
+}
+
+void AUTCharacter::MagicAttack()
+{
+	const FVector RightHandLocation = GetMesh()->GetSocketLocation("Muzzle_01");
+	const FTransform SpawnLocationMatrix = FTransform(GetControlRotation(), RightHandLocation);
+
+	FActorSpawnParameters SpawnParameters;
+	SpawnParameters.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+	
+	GetWorld()->SpawnActor<AActor>(MagicAttackClass, SpawnLocationMatrix, SpawnParameters);
 }

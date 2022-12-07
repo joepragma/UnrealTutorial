@@ -20,6 +20,9 @@ public:
 	AUTCharacter();
 
 protected:
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<AActor> MagicAttackClass;
+	
 	UPROPERTY(VisibleAnywhere)
 	UCameraComponent* CameraComponent;
 
@@ -38,4 +41,5 @@ public:
 
 	void MoveForward(float Value);
 	void MoveRight(float Value);
+	void MagicAttack();
 };
