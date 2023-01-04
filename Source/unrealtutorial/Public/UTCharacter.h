@@ -11,6 +11,7 @@
 class UCameraComponent;
 class USpringArmComponent;
 class UUTInteractionComponent;
+class UAnimMontage;
 
 UCLASS()
 class UNREALTUTORIAL_API AUTCharacter : public ACharacter
@@ -22,9 +23,14 @@ public:
 	AUTCharacter();
 
 protected:
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category="Attack")
 	TSubclassOf<AActor> MagicAttackClass;
-	
+
+	UPROPERTY(EditAnywhere, Category="Attack")
+	UAnimMontage* MagicAttackAnimation;
+
+	FTimerHandle MagicAttackTimerHandler;
+
 	UPROPERTY(VisibleAnywhere)
 	UCameraComponent* CameraComponent;
 
@@ -40,12 +46,13 @@ protected:
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-	
+
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	void MoveForward(float Value);
 	void MoveRight(float Value);
 	void MagicAttack();
+	void MagicAttackAfterTimer();
 	void Interact();
 };

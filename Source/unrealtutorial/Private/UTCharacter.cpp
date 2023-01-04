@@ -75,6 +75,13 @@ void AUTCharacter::MoveRight(float Value)
 
 void AUTCharacter::MagicAttack()
 {
+	PlayAnimMontage(MagicAttackAnimation);
+
+	GetWorldTimerManager().SetTimer(MagicAttackTimerHandler, this, &AUTCharacter::MagicAttackAfterTimer, 0.2f);
+}
+
+void AUTCharacter::MagicAttackAfterTimer()
+{
 	const FVector RightHandLocation = GetMesh()->GetSocketLocation("Muzzle_01");
 	const FTransform SpawnLocationMatrix = FTransform(GetControlRotation(), RightHandLocation);
 
