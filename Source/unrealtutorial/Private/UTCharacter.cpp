@@ -20,6 +20,8 @@ AUTCharacter::AUTCharacter()
 	CameraComponent = CreateDefaultSubobject<UCameraComponent>("UCameraComponent");
 	CameraComponent->SetupAttachment(SpringArmComponent);
 
+	InteractionComponent = CreateDefaultSubobject<UUTInteractionComponent>("UUTInteractionComponent");
+
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 
 	bUseControllerRotationYaw = false;
@@ -49,6 +51,7 @@ void AUTCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &AUTCharacter::Jump);
 	PlayerInputComponent->BindAction("MagicAttack", IE_Pressed, this, &AUTCharacter::MagicAttack);
+	PlayerInputComponent->BindAction("Interact", IE_Pressed, this, &AUTCharacter::Interact);
 }
 
 void AUTCharacter::MoveForward(float Value)
@@ -79,4 +82,9 @@ void AUTCharacter::MagicAttack()
 	SpawnParameters.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
 	
 	GetWorld()->SpawnActor<AActor>(MagicAttackClass, SpawnLocationMatrix, SpawnParameters);
+}
+
+void AUTCharacter::Interact()
+{
+	InteractionComponent->PrimaryInteract();
 }

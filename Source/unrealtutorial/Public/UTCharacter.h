@@ -3,12 +3,14 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "UTInteractionComponent.h"
 #include "GameFramework/Character.h"
 #include "UTCharacter.generated.h"
 
 // Forward declarations
 class UCameraComponent;
 class USpringArmComponent;
+class UUTInteractionComponent;
 
 UCLASS()
 class UNREALTUTORIAL_API AUTCharacter : public ACharacter
@@ -29,6 +31,9 @@ protected:
 	UPROPERTY(VisibleAnywhere)
 	USpringArmComponent* SpringArmComponent;
 
+	UPROPERTY(VisibleAnywhere)
+	UUTInteractionComponent* InteractionComponent;
+
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
@@ -42,4 +47,5 @@ public:
 	void MoveForward(float Value);
 	void MoveRight(float Value);
 	void MagicAttack();
+	void Interact();
 };
