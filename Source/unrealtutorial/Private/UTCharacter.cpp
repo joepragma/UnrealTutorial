@@ -87,6 +87,7 @@ void AUTCharacter::MagicAttackAfterTimer()
 
 	FActorSpawnParameters SpawnParameters;
 	SpawnParameters.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+	SpawnParameters.Instigator = this;
 	
 	GetWorld()->SpawnActor<AActor>(MagicAttackClass, SpawnLocationMatrix, SpawnParameters);
 }
