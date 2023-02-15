@@ -22,6 +22,8 @@ AUTCharacter::AUTCharacter()
 
 	InteractionComponent = CreateDefaultSubobject<UUTInteractionComponent>("UUTInteractionComponent");
 
+	AttributeComponent = CreateDefaultSubobject<AUTAttributeComponent>("AUTAttributeComponent");
+
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 
 	bUseControllerRotationYaw = false;

@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "UTAttributeComponent.h"
 #include "UTInteractionComponent.h"
 #include "GameFramework/Character.h"
 #include "UTCharacter.generated.h"
@@ -12,6 +13,7 @@ class UCameraComponent;
 class USpringArmComponent;
 class UUTInteractionComponent;
 class UAnimMontage;
+class AUTAttributeComponent;
 
 UCLASS()
 class UNREALTUTORIAL_API AUTCharacter : public ACharacter
@@ -39,6 +41,9 @@ protected:
 
 	UPROPERTY(VisibleAnywhere)
 	UUTInteractionComponent* InteractionComponent;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components")
+	AUTAttributeComponent* AttributeComponent;
 
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
