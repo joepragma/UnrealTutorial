@@ -13,7 +13,7 @@ class UCameraComponent;
 class USpringArmComponent;
 class UUTInteractionComponent;
 class UAnimMontage;
-class AUTAttributeComponent;
+class UUTAttributeComponent;
 
 UCLASS()
 class UNREALTUTORIAL_API AUTCharacter : public ACharacter
@@ -43,7 +43,7 @@ protected:
 	UUTInteractionComponent* InteractionComponent;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components")
-	AUTAttributeComponent* AttributeComponent;
+	UUTAttributeComponent* AttributeComponent;
 
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

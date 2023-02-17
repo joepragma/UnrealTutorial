@@ -6,7 +6,6 @@
 #include "Components/ActorComponent.h"
 #include "UTInteractionComponent.generated.h"
 
-
 UCLASS(ClassGroup=(Custom), meta=(BlueprintSpawnableComponent))
 class UNREALTUTORIAL_API UUTInteractionComponent : public UActorComponent
 {

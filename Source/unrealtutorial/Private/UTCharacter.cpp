@@ -22,7 +22,7 @@ AUTCharacter::AUTCharacter()
 
 	InteractionComponent = CreateDefaultSubobject<UUTInteractionComponent>("UUTInteractionComponent");
 
-	AttributeComponent = CreateDefaultSubobject<AUTAttributeComponent>("AUTAttributeComponent");
+	AttributeComponent = CreateDefaultSubobject<UUTAttributeComponent>("UUTAttributeComponent");
 
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 

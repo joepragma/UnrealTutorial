@@ -4,12 +4,12 @@
 #include "UTAttributeComponent.h"
 
 // Sets default values
-AUTAttributeComponent::AUTAttributeComponent()
+UUTAttributeComponent::UUTAttributeComponent()
 {
 	Health = 100;
 }
 
-bool AUTAttributeComponent::ApplyHealthChange(float Delta)
+bool UUTAttributeComponent::ApplyHealthChange(float Delta)
 {
 	Health += Delta;
 	return true;

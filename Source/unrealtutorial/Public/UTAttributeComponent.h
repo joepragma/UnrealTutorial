@@ -3,17 +3,17 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
+#include "Components/ActorComponent.h"
 #include "UTAttributeComponent.generated.h"
 
-UCLASS()
-class UNREALTUTORIAL_API AUTAttributeComponent : public AActor
+UCLASS(ClassGroup=(Custom), meta=(BlueprintSpawnableComponent))
+class UNREALTUTORIAL_API UUTAttributeComponent : public UActorComponent
 {
 	GENERATED_BODY()
 
 public:
 	// Sets default values for this actor's properties
-	AUTAttributeComponent();
+	UUTAttributeComponent();
 
 protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Attributes")

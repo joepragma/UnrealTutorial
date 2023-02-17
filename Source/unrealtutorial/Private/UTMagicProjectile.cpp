@@ -32,8 +32,8 @@ void AUTMagicProjectile::OnActorOverlap(UPrimitiveComponent* OverlappedComponent
 {
 	if (OtherActor != nullptr)
 	{
-		AUTAttributeComponent* AttributeComponent = Cast<AUTAttributeComponent>(
-			OtherActor->GetComponentByClass(AUTAttributeComponent::StaticClass()));
+		UUTAttributeComponent* AttributeComponent = Cast<UUTAttributeComponent>(
+			OtherActor->GetComponentByClass(UUTAttributeComponent::StaticClass()));
 
 		if (AttributeComponent != nullptr)
 		{
