@@ -12,5 +12,6 @@ UUTAttributeComponent::UUTAttributeComponent()
 bool UUTAttributeComponent::ApplyHealthChange(float Delta)
 {
 	Health += Delta;
+	OnHealthChanged.Broadcast(/*Instigator*/ nullptr, this, Health, Delta);
 	return true;
 }
