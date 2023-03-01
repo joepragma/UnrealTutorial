@@ -30,7 +30,7 @@ void AUTMagicProjectile::OnActorOverlap(UPrimitiveComponent* OverlappedComponent
                                         UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep,
                                         const FHitResult& SweepResult)
 {
-	if (OtherActor != nullptr)
+	if (OtherActor != nullptr && OtherActor != GetInstigator())
 	{
 		UUTAttributeComponent* AttributeComponent = Cast<UUTAttributeComponent>(
 			OtherActor->GetComponentByClass(UUTAttributeComponent::StaticClass()));
