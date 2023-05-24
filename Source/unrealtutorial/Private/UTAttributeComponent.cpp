@@ -9,6 +9,11 @@ UUTAttributeComponent::UUTAttributeComponent()
 	Health = 100;
 }
 
+bool UUTAttributeComponent::IsAlive()
+{
+	return Health > 0.0f;
+}
+
 bool UUTAttributeComponent::ApplyHealthChange(float Delta)
 {
 	Health += Delta;
